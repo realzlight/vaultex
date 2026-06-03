@@ -6,7 +6,7 @@ function Login() {
     <div className="login-wrapper">
       <div className="login-box">
 
-        <div className="logo">🔷</div>
+        <div className="logo">⚫</div>
         <h1>Log in</h1>
 
         <button className="oauth-btn">
@@ -34,7 +34,7 @@ function Login() {
         <p className="footer-text">
           Don't have an account? <Link to="/signin">Create your account</Link>
         </p>
-
+  <div className="divider"></div>
         <p className="sso-text">
           🔒 SSO available on <a href="#">Business and Enterprise</a> plans
         </p>
