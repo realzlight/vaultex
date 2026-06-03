@@ -1,11 +1,12 @@
 :root {
   --height: 35px;
+  --bg : #0a0a0a;
 }
 
 
 .login-wrapper {
   min-height: 100vh;
-  background: #1c1c1c;
+  background: var(--bg);
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -39,7 +40,7 @@
   margin-top:5px;
   height:var(--height);
   padding: 11px 16px;
-  background: #1c1c1c;
+  background: var(--bg);
   color: #f1f1f1;;
   border: 1px solid #3a3a3a;
   border-radius: 8px;
@@ -93,7 +94,7 @@ input {
   width: 100%;
   height:var(--height);
   padding: 11px 14px;
-  background: #1c1c1c;
+  background: var(--bg);
   border: 1px solid #3a3a3a;
   border-radius: 8px;
   color: #ffffff;
