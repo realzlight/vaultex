@@ -1,40 +1,41 @@
 .login-wrapper {
   min-height: 100vh;
-  background: #1a1a1a;
+  background: #1c1c1c;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 24px 20px;
 }
 
 .login-box {
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .logo {
-  font-size: 40px;
-  margin-bottom: 8px;
+  font-size: 36px;
+  margin-bottom: 12px;
 }
 
-h1 {
-  font-size: 32px;
+.login-box h1 {
+  font-size: 28px;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .oauth-btn {
   width: 100%;
-  padding: 14px;
-  background: #2a2a2a;
+  padding: 11px 16px;
+  background: #2b2b2b;
   color: #ffffff;
-  border: 1px solid #333;
+  border: 1px solid #3a3a3a;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -46,13 +47,18 @@ h1 {
   background: #333;
 }
 
+.oauth-btn img {
+  width: 18px;
+  height: 18px;
+}
+
 .divider {
   display: flex;
   align-items: center;
-  gap: 12px;
-  color: #666;
-  font-size: 13px;
-  margin: 4px 0;
+  gap: 10px;
+  color: #555;
+  font-size: 12px;
+  margin: 2px 0;
 }
 
 .divider::before,
@@ -60,24 +66,30 @@ h1 {
   content: '';
   flex: 1;
   height: 1px;
-  background: #333;
+  background: #3a3a3a;
 }
 
 label {
   color: #ffffff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
+  margin-bottom: -4px;
 }
 
 input {
   width: 100%;
-  padding: 14px;
-  background: #2a2a2a;
-  border: 1px solid #333;
+  padding: 11px 14px;
+  background: #2b2b2b;
+  border: 1px solid #3a3a3a;
   border-radius: 8px;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
   outline: none;
+}
+
+input::placeholder {
+  color: #666;
 }
 
 input:focus {
@@ -86,25 +98,27 @@ input:focus {
 
 .continue-btn {
   width: 100%;
-  padding: 14px;
-  background: #ffffff;
+  padding: 11px;
+  background: #f0f0f0;
   color: #000000;
   border: none;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
+  font-family: 'Inter', sans-serif;
   cursor: pointer;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .continue-btn:hover {
-  background: #e5e5e5;
+  background: #e0e0e0;
 }
 
 .footer-text {
   text-align: center;
-  color: #888;
-  font-size: 14px;
+  color: #777;
+  font-size: 13px;
+  margin-top: 4px;
 }
 
 .footer-text a {
@@ -114,12 +128,16 @@ input:focus {
 
 .sso-text {
   text-align: center;
-  color: #666;
-  font-size: 13px;
-  margin-top: 8px;
+  color: #555;
+  font-size: 12px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
 .sso-text a {
-  color: #888;
+  color: #777;
   text-decoration: underline;
 }

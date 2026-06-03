@@ -6,22 +6,25 @@ function Login() {
     <div className="login-wrapper">
       <div className="login-box">
 
-        <div className="logo">⬡</div>
+        <div className="logo">🔷</div>
         <h1>Log in</h1>
 
         <button className="oauth-btn">
-          <span>G</span> Continue with Google
-        </button>
-        <button className="oauth-btn">
-          <span>⌘</span> Continue with GitHub
-        </button>
-        <button className="oauth-btn">
-          <span></span> Continue with Apple
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" />
+          Continue with Google
         </button>
 
-        <div className="divider">
-          <span>OR</span>
-        </div>
+        <button className="oauth-btn">
+          <img src="https://www.svgrepo.com/show/512317/github-142.svg" alt="GitHub" style={{filter:'invert(1)'}} />
+          Continue with GitHub
+        </button>
+
+        <button className="oauth-btn">
+          <img src="https://www.svgrepo.com/show/452222/apple.svg" alt="Apple" style={{filter:'invert(1)'}} />
+          Continue with Apple
+        </button>
+
+        <div className="divider"><span>OR</span></div>
 
         <label>Email</label>
         <input type="email" placeholder="Email" />
