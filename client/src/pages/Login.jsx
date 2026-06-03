@@ -3,6 +3,13 @@ import './Login.css'
 import AuthUI from '../components/AuthUI'
 
 function Login(props){
+  
+  function Login() {
+  const handleSubmit = () => {
+    console.log("Submit clicked")
+  }
+  
+  
   return (
     <div className="LoginContainer">
       <AuthUI
