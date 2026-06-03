@@ -8,7 +8,7 @@ function Login(props){
   const handleSubmit = () => {
     console.log("Submit clicked")
   }
-  
+  }
   
   return (
     <div className="LoginContainer">
