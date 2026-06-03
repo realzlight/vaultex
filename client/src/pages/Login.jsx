@@ -1,8 +1,22 @@
 import './Login.css'
 import { Link } from 'react-router-dom'
-import { Github, Apple, Lock, Hexagon } from 'lucide-react'
+import { GitBranch, Apple, Lock, Hexagon } from 'lucide-react'
+import { useState } from 'react'
 
 function Login() {
+  const [email, setEmail] = useState('')
+  const [emailError, setEmailError] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
+
+  const handleContinue = () => {
+    if (email.trim() === '') {
+      setEmailError(true)
+      return
+    }
+    setEmailError(false)
+    setShowPassword(true)
+  }
+
   return (
     <div className="login-wrapper">
       <div className="login-box">
@@ -23,7 +37,7 @@ function Login() {
         </button>
 
         <button className="oauth-btn">
-          <Github size={18} />
+          <GitBranch size={18} />
           Continue with GitHub
         </button>
 
@@ -35,9 +49,29 @@ function Login() {
         <div className="divider"><span>OR</span></div>
 
         <label>Email</label>
-        <input type="email" placeholder="Email" />
+        <input
+          type="email"
+          placeholder={emailError ? "Please enter a valid email address" : "Email"}
+          className={emailError ? "input-error" : ""}
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value)
+            if (e.target.value.trim() !== '') {
+              setEmailError(false)
+            }
+          }}
+        />
 
-        <button className="continue-btn">Continue</button>
+        {showPassword && (
+          <div className="password-input">
+            <label>Password</label>
+            <input type="password" placeholder="Password" />
+          </div>
+        )}
+
+        <button className="continue-btn" onClick={handleContinue}>
+          Continue
+        </button>
 
         <p className="footer-text">
           Don't have an account? <Link to="/signin">Create your account</Link>
