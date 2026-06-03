@@ -1,5 +1,5 @@
 :root {
-  --height: 28px;
+  --height: 32px;
 }
 
 
@@ -27,7 +27,7 @@
 
 .login-box h1 {
   font-size: 28px;
-  font-weight: 650;
+  font-weight: 600;
   color: #ffffff;
   margin-bottom: 16px;
 }
@@ -114,7 +114,10 @@ input:focus {
   font-size: 14px;
   font-weight: 600;
   font-family: 'Inter', sans-serif;
+  text-align:center;
   cursor: pointer;
+  align-items:center;
+  justify-content: center;
   margin-top: 2px;
 }
 
