@@ -5,14 +5,14 @@ import Signin from './pages/Signin'
 
 function App() {
   return (
-    <div className="app">
-      <BrowserRouter>
+    <BrowserRouter>
+      <div className="app">
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signin" element={<Signin />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   )
 }
 
