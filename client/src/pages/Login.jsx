@@ -1,0 +1,26 @@
+import React from 'react'
+import './Login.css'
+import AuthUI from './component/AuthUI.jsx'
+
+function Login(props){
+  return (
+    <div className="LoginContainer">
+      <AuthUI
+      title="Log in to your account"
+      buttonText="Continue"
+      footerText="Don't have an account?"
+      footerLink="/signup"
+      footerLinkText="Create your account"
+      onSubmit={handleSubmit}
+    />
+      
+      
+      
+      
+      
+      
+    </div>
+  )
+}
+
+export default Login
