@@ -29,7 +29,7 @@
   font-size: 28px;
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .oauth-btn {
@@ -46,7 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .oauth-btn:hover {
@@ -79,7 +79,7 @@ label {
   color: #ffffff;
   font-size: 13px;
   font-weight: 500;
-  margin-bottom: -4px;
+  margin-bottom: -6px;
 }
 
 input {
@@ -105,8 +105,8 @@ input:focus {
 
 .continue-btn {
   width: 100%;
-  padding: 11px;
-  height:var(--height);
+  height: var(--height);
+  padding: 0 16px;
   background: #f0f0f0;
   color: #000000;
   border: none;
@@ -114,9 +114,9 @@ input:focus {
   font-size: 14px;
   font-weight: 600;
   font-family: 'Inter', sans-serif;
-  text-align:center;
   cursor: pointer;
-  align-items:center;
+  display: flex;
+  align-items: center;
   justify-content: center;
   margin-top: 2px;
 }
