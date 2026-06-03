@@ -6,11 +6,13 @@ function Login() {
     <div className="login-wrapper">
       <div className="login-box">
 
-        <div className="logo">⚫</div>
+        <div className="logo">
+          <img src="https://www.svgrepo.com/show/452210/cipher.svg" alt="logo" style={{width:'42px', height:'42px', filter:'invert(1)'}} />
+        </div>
         <h1>Log in</h1>
 
         <button className="oauth-btn">
-          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" />
+          <img src="https://www.svgrepo.com/show/475235/google-color.svg" alt="Google" />
           Continue with Google
         </button>
 
@@ -34,9 +36,12 @@ function Login() {
         <p className="footer-text">
           Don't have an account? <Link to="/signin">Create your account</Link>
         </p>
-  <div className="divider"></div>
+
+        <div className="divider"></div>
+
         <p className="sso-text">
-          🔒 SSO available on <a href="#">Business and Enterprise</a> plans
+          <img src="https://www.svgrepo.com/show/522527/lock.svg" alt="lock" style={{width:'13px', height:'13px', filter:'invert(0.4)'}} />
+          SSO available on <a href="#">Business and Enterprise</a> plans
         </p>
 
       </div>
