@@ -1,6 +1,6 @@
 import React from 'react'
 import './Login.css'
-import AuthUI from '../component/AuthUI.jsx'
+import AuthUI from '../components/AuthUI'
 
 function Login(props){
   return (
