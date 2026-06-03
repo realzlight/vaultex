@@ -31,10 +31,12 @@
   color: #ffffff;
   margin-bottom: 20px;
   gap:5px;
+  margin-top:5px;
 }
 
 .oauth-btn {
   width: 100%;
+  margin-top:5px;
   height:var(--height);
   padding: 11px 16px;
   background: #1c1c1c;
@@ -67,6 +69,7 @@
   font-size: 12px;
   margin: 2px 0;
   margin-top:5px;
+  margin-bottom: -5px;
 }
 
 .divider::before,
@@ -83,6 +86,7 @@ label {
   font-weight: 500;
   margin-bottom: -6px;
   margin-top:2px;
+  gap:5px; 
 }
 
 input {
@@ -96,7 +100,8 @@ input {
   font-size: 14px;
   font-family: 'Inter', sans-serif;
   outline: none;
-  gap:15px;
+  gap:18px;
+  margin-top:5px;
 }
 
 input::placeholder {
@@ -145,7 +150,7 @@ input:focus {
   text-align: center;
   color: #555;
   font-size: 12px;
-  margin-top: 4px;
+  margin-top: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
