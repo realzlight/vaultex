@@ -1,3 +1,8 @@
+:root {
+  --height: 28px;
+}
+
+
 .login-wrapper {
   min-height: 100vh;
   background: #1c1c1c;
@@ -29,7 +34,7 @@
 
 .oauth-btn {
   width: 100%;
-  height:20px;
+  height:var(--height);
   padding: 11px 16px;
   background: #1c1c1c;
   color: #f1f1f1;;
@@ -79,7 +84,7 @@ label {
 
 input {
   width: 100%;
-  height:20px;
+  height:var(--height);
   padding: 11px 14px;
   background: #1c1c1c;
   border: 1px solid #3a3a3a;
@@ -101,7 +106,7 @@ input:focus {
 .continue-btn {
   width: 100%;
   padding: 11px;
-  height:20px;
+  height:var(--height);
   background: #f0f0f0;
   color: #000000;
   border: none;
