@@ -8,7 +8,7 @@ function Login({ title, buttonText, footerText, footerLink, footerLinkText, onSu
       <div className="login-box">
 
         <div className="login-logo">
-          <Hexagon size={40} strokeWidth={1.5} />
+          <h1>zlight-auth</h1>
         </div>
         <h1>{title}</h1>
 
