@@ -7,9 +7,9 @@ function Login({ title, buttonText, footerText, footerLink, footerLinkText, onSu
     <div className="login-wrapper">
       <div className="login-box">
 
-        <div className="login-logo">
-          <h1>zlight-auth</h1>
-        </div>
+        
+          <h1 className="login-logo">zlight-auth</h1>
+        
         <h1>Log in to your account</h1>
 
         <button className="login-oauth-btn">
@@ -43,7 +43,7 @@ function Login({ title, buttonText, footerText, footerLink, footerLinkText, onSu
         <button onClick={onSubmit} className="login-continue-btn">Continue</button>
 
         <p className="login-footer-text">
-          {footerText} <Link to="/signin">create account</Link>
+          {footerText} <Link to="/signin">Don't have an account? create one.</Link>
         </p>
 
         <div className="login-divider"></div>

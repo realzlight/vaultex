@@ -3,14 +3,18 @@
   --bg : #0a0a0a;
 }
 
-.login-logo h1{
+.login-logo{
   color: white ;
-  text-size:12px;
+  font-size:12px;
   font-family: "inter",sans-serif;
   margin-left:10px;
   font-weight:300;
 }
-
+h1{
+  color:white;
+  font-weight:400;
+  font-size:1rem;
+}
 .login-wrapper {
   min-height: 100vh;
   background: var(--bg);
