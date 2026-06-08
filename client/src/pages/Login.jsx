@@ -8,7 +8,7 @@ function Login({ title, buttonText, footerText, footerLink, footerLinkText, onSu
       <div className="login-box">
 
         
-          <p> className="login-logo">zlight-auth</p>
+          <p className="login-logo">zlight-auth</p>
         
         <h1>Log in to your account</h1>
 
