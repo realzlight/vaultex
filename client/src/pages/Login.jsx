@@ -43,7 +43,7 @@ function Login({ title, buttonText, footerText, footerLink, footerLinkText, onSu
         <button onClick={onSubmit} className="login-continue-btn">Continue</button>
 
         <p className="login-footer-text">
-          {footerText} <Link to="/signin">Don't have an account? create one.</Link>
+          {footerText} <Link to="/signin">Don't have an account? Create one.</Link>
         </p>
 
         <div className="login-divider"></div>

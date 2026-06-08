@@ -43,7 +43,7 @@ function Signup({ title, buttonText, footerText, footerLink, footerLinkText, onS
         <button onClick={onSubmit} className="signup-continue-btn">Continue</button>
 
         <p className="signup-footer-text">
-           <Link to="/login">Already have an account?</Link>
+           <Link to="/login">Already have an account? Log in.</Link>
         </p>
 
         <div className="signup-divider"></div>
