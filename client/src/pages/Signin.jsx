@@ -7,10 +7,10 @@ function Signup({ title, buttonText, footerText, footerLink, footerLinkText, onS
     <div className="signup-wrapper">
       <div className="signup-box">
 
-        <div className="signup-logo">
-          <Hexagon size={40} strokeWidth={1.5} />
-        </div>
-        <h1>{title}</h1>
+          <p className="signup-logo">zlight-auth</p>
+        
+        <h1>Sign in to your account</h1>
+
 
         <button className="signup-oauth-btn">
           <svg width="18" height="18" viewBox="0 0 24 24">
@@ -40,10 +40,10 @@ function Signup({ title, buttonText, footerText, footerLink, footerLinkText, onS
         <label>Password</label>
         <input type="password" placeholder="Password" />
 
-        <button onClick={onSubmit} className="signup-continue-btn">{buttonText}</button>
+        <button onClick={onSubmit} className="signup-continue-btn">Continue</button>
 
         <p className="signup-footer-text">
-          {footerText} <Link to={footerLink}>{footerLinkText}</Link>
+           <Link to="/login">Already have an account?</Link>
         </p>
 
         <div className="signup-divider"></div>
