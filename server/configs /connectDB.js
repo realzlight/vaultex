@@ -9,7 +9,6 @@ const connectDB = async () => {
 
   mongoose.connection.on('error', (err) => {
     console.error("❌ DB Connection Error:", err.message);
-    process.exit(1);
   });
 
   mongoose.connection.on('disconnected', () => {
@@ -17,7 +16,9 @@ const connectDB = async () => {
   });
 
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(process.env.MONGO_URI, {
+      dbName: 'vaultex' // optional: forces DB name if not in URI
+    });
   } catch (error) {
     console.error("❌ DB Connection Failed:", error.message);
     process.exit(1);
