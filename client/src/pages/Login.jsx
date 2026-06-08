@@ -10,7 +10,7 @@ function Login({ title, buttonText, footerText, footerLink, footerLinkText, onSu
         <div className="login-logo">
           <h1>zlight-auth</h1>
         </div>
-        <h1>{title}</h1>
+        <h1>Log in to your account</h1>
 
         <button className="login-oauth-btn">
           <svg width="18" height="18" viewBox="0 0 24 24">
@@ -40,10 +40,10 @@ function Login({ title, buttonText, footerText, footerLink, footerLinkText, onSu
         <label>Password</label>
         <input type="password" placeholder="Password" />
 
-        <button onClick={onSubmit} className="login-continue-btn">{buttonText}</button>
+        <button onClick={onSubmit} className="login-continue-btn">Continue</button>
 
         <p className="login-footer-text">
-          {footerText} <Link to={footerLink}>{footerLinkText}</Link>
+          {footerText} <Link to="/signin">create account</Link>
         </p>
 
         <div className="login-divider"></div>
