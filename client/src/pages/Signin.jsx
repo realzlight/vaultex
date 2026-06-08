@@ -39,6 +39,9 @@ function Signup({ title, buttonText, footerText, footerLink, footerLinkText, onS
 
         <label>Password</label>
         <input type="password" placeholder="Password" />
+        
+        <label>Name</label>
+        <input type="email" placeholder="John Doe" />
 
         <button onClick={onSubmit} className="signup-continue-btn">Continue</button>
 
