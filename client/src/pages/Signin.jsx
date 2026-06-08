@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { GitBranch, Apple, Lock, Hexagon } from 'lucide-react'
-import './Signup.css'
+import './Signin.css'
 
 function Signup({ title, buttonText, footerText, footerLink, footerLinkText, onSubmit }) {
   return (
