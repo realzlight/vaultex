@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Connect DB
-connectDB();
+await connectDB();
 
 app.get('/', (req, res) => {
   res.json({ message: 'Server running' });
