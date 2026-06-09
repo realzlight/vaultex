@@ -6,6 +6,8 @@ import bcrypt from 'bcrypt';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import connectDB from './configs/connectDB.js';
+import authRoutes from './routes/auth.js';
+
 
 dotenv.config();
 
@@ -22,6 +24,8 @@ app.use(cookieParser());
 
 // Connect DB
 await connectDB();
+
+app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => {
   res.json({ message: 'Server running' });
