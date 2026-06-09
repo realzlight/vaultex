@@ -1,82 +1,141 @@
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
-import { LogOut, User, Shield, Activity, Key } from 'lucide-react'
-import './Dashboard.css'
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-export default function Dashboard() {
-  const [user, setUser] = useState(null);
-  const navigate = useNavigate();
+body {
+  background: #0d0d0d;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #ededed;
+}
 
-  useEffect(() => {
-    axios.get('http://localhost:5000/api/auth/verify', { withCredentials: true })
-      .catch(() => navigate('/login'));
-  }, []);
+/* Navbar */
+.dash-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid #1a1a1a;
+  position: sticky;
+  top: 0;
+  background: #0d0d0d;
+  z-index: 10;
+}
 
-  const handleLogout = async () => {
-    await axios.post('http://localhost:5000/api/auth/logout', {}, { withCredentials: true });
-    navigate('/login');
-  };
+.dash-logo {
+  font-size: 13px;
+  color: #ededed;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
 
-  return (
-    <div className="dash-wrapper">
+.dash-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
-      {/* Navbar */}
-      <nav className="dash-nav">
-        <p className="dash-logo">vaultex</p>
-        <div className="dash-nav-right">
-          <span className="dash-nav-user">
-            <User size={13} /> account
-          </span>
-          <button className="dash-logout" onClick={handleLogout}>
-            <LogOut size={13} /> logout
-          </button>
-        </div>
-      </nav>
+.dash-nav-user {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #555;
+}
 
-      {/* Main */}
-      <main className="dash-main">
+.dash-logout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #555;
+  background: transparent;
+  border: 1px solid #1e1e1e;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
 
-        <div className="dash-header">
-          <p className="dash-eyebrow">dashboard</p>
-          <h1 className="dash-title">welcome back</h1>
-          <p className="dash-sub">here's what's happening with your account</p>
-        </div>
+.dash-logout:hover {
+  color: #ededed;
+  border-color: #333;
+}
 
-        {/* Cards */}
-        <div className="dash-grid">
+/* Main */
+.dash-main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 32px;
+}
 
-          <div className="dash-card">
-            <div className="dash-card-top">
-              <Shield size={14} color="#555" />
-              <span>auth status</span>
-            </div>
-            <p className="dash-card-value">active</p>
-            <p className="dash-card-desc">token valid for 7 days</p>
-          </div>
+.dash-header {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
-          <div className="dash-card">
-            <div className="dash-card-top">
-              <Activity size={14} color="#555" />
-              <span>last login</span>
-            </div>
-            <p className="dash-card-value">just now</p>
-            <p className="dash-card-desc">from this device</p>
-          </div>
+.dash-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: #444;
+  text-transform: lowercase;
+}
 
-          <div className="dash-card">
-            <div className="dash-card-top">
-              <Key size={14} color="#555" />
-              <span>session</span>
-            </div>
-            <p className="dash-card-value">httponly</p>
-            <p className="dash-card-desc">cookie secured</p>
-          </div>
+.dash-title {
+  font-size: 24px;
+  font-weight: 300;
+  color: #ededed;
+  letter-spacing: -0.02em;
+}
 
-        </div>
+.dash-sub {
+  font-size: 13px;
+  color: #555;
+  font-weight: 300;
+}
 
-      </main>
+/* Grid */
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
 
-    </div>
-  )
+.dash-card {
+  background: #111;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s;
+}
+
+.dash-card:hover {
+  border-color: #2a2a2a;
+}
+
+.dash-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #555;
+  letter-spacing: 0.05em;
+}
+
+.dash-card-value {
+  font-size: 18px;
+  font-weight: 300;
+  color: #ededed;
+  letter-spacing: -0.01em;
+}
+
+.dash-card-desc {
+  font-size: 11px;
+  color: #444;
 }
