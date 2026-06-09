@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import connectDB from './configs/connectDB.js';
 import authRoutes from './routes/auth.js';
-
+import protect from '../middleware/protect.js';
 
 dotenv.config();
 
@@ -30,6 +30,10 @@ app.post('/test', (req, res) => {
   res.json({ message: 'Test works' });
 });
 
+
+router.get('/verify', protect, (req, res) => {
+  res.status(200).json({ valid: true });
+});
 app.get('/', (req, res) => {
   res.json({ message: 'Server running' });
 });

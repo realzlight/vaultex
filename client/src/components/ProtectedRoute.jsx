@@ -7,11 +7,17 @@ export default function ProtectedRoute({ children }) {
 
   useEffect(() => {
     axios.get('http://localhost:5000/api/auth/verify', { withCredentials: true })
-      .then(() => setIsAuth(true))
-      .catch(() => setIsAuth(false));
+      .then((res) => {
+        console.log('verify success', res.data);
+        setIsAuth(true);
+      })
+      .catch((err) => {
+        console.log('verify failed', err.response?.status, err.response?.data);
+        setIsAuth(false);
+      });
   }, []);
 
-  if (isAuth === null) return null;
+  if (isAuth === null) return <p>loading...</p>;
   if (!isAuth) return <Navigate to="/login" />;
 
   return children;
