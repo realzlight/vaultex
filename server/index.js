@@ -26,7 +26,9 @@ app.use(cookieParser());
 await connectDB();
 
 app.use('/api/auth', authRoutes);
-
+app.post('/test', (req, res) => {
+  res.json({ message: 'Test works' });
+});
 app.get('/', (req, res) => {
   res.json({ message: 'Server running' });
 });

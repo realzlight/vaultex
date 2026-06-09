@@ -1,3 +1,6 @@
+console.log('auth route loaded')
+
+
 import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
