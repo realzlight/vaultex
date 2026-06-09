@@ -7,7 +7,9 @@ import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 
 const router = express.Router();
-
+router.get('/verify', protect, (req, res) => {
+  res.status(200).json({ valid: true });
+});
 router.post('/signin', async (req, res) => {
   try {
     const { name, email, password } = req.body;

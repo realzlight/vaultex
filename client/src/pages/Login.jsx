@@ -1,15 +1,34 @@
-import { Link } from 'react-router-dom'
-import { GitBranch, Apple, Lock, Hexagon } from 'lucide-react'
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { GitBranch, Apple, Lock } from 'lucide-react'
+import axios from 'axios'
 import './Login.css'
 
-function Login({ title, buttonText, footerText, footerLink, footerLinkText, onSubmit }) {
+function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:5000/api/auth/login',
+        { email, password },
+        { withCredentials: true }
+      );
+      navigate('/dashboard');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Login failed');
+    }
+  };
+
   return (
     <div className="login-wrapper">
       <div className="login-box">
 
-        
-          <p className="login-logo">zlight-auth</p>
-        
+        <p className="login-logo">vaultex</p>
+
         <h1>Log in to your account</h1>
 
         <button className="login-oauth-btn">
@@ -35,15 +54,27 @@ function Login({ title, buttonText, footerText, footerLink, footerLinkText, onSu
         <div className="login-divider"><span>OR</span></div>
 
         <label>Email</label>
-        <input type="email" placeholder="Email" />
+        <input 
+          type="email" 
+          placeholder="Email" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+        />
 
         <label>Password</label>
-        <input type="password" placeholder="Password" />
+        <input 
+          type="password" 
+          placeholder="Password" 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+        />
 
-        <button onClick={onSubmit} className="login-continue-btn">Continue</button>
+        {error && <p className="login-error">{error}</p>}
+
+        <button onClick={handleSubmit} className="login-continue-btn">Continue</button>
 
         <p className="login-footer-text">
-          {footerText} <Link to="/signin">Don't have an account? Create one.</Link>
+          <Link to="/signin">Don't have an account? Create one.</Link>
         </p>
 
         <div className="login-divider"></div>

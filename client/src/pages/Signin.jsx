@@ -1,16 +1,36 @@
-import { Link } from 'react-router-dom'
-import { GitBranch, Apple, Lock, Hexagon } from 'lucide-react'
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { GitBranch, Apple, Lock } from 'lucide-react'
+import axios from 'axios'
 import './Signin.css'
 
-function Signup({ title, buttonText, footerText, footerLink, footerLinkText, onSubmit }) {
+function Signup() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:5000/api/auth/signin',
+        { name, email, password },
+        { withCredentials: true }
+      );
+      navigate('/dashboard');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Signup failed');
+    }
+  };
+
   return (
     <div className="signup-wrapper">
       <div className="signup-box">
 
-          <p className="signup-logo">zlight-auth</p>
-        
-        <h1>Sign in to your account</h1>
+        <p className="signup-logo">vaultex</p>
 
+        <h1>Create your account</h1>
 
         <button className="signup-oauth-btn">
           <svg width="18" height="18" viewBox="0 0 24 24">
@@ -34,19 +54,36 @@ function Signup({ title, buttonText, footerText, footerLink, footerLinkText, onS
 
         <div className="signup-divider"><span>OR</span></div>
 
+        <label>Name</label>
+        <input
+          type="text"
+          placeholder="John Doe"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
         <label>Email</label>
-        <input type="email" placeholder="Email" />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
         <label>Password</label>
-        <input type="password" placeholder="Password" />
-        
-        <label>Name</label>
-        <input type="email" placeholder="John Doe" />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-        <button onClick={onSubmit} className="signup-continue-btn">Continue</button>
+        {error && <p className="signup-error">{error}</p>}
+
+        <button onClick={handleSubmit} className="signup-continue-btn">Continue</button>
 
         <p className="signup-footer-text">
-           <Link to="/login">Already have an account? Log in.</Link>
+          <Link to="/login">Already have an account? Log in.</Link>
         </p>
 
         <div className="signup-divider"></div>
